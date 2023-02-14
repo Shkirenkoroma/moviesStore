@@ -1,0 +1,59 @@
+import { FC } from "react";
+import "./style.css";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { ADD_COMMENT } from "../../assets/constants/index";
+import { useSelector } from "react-redux";
+
+const TextArea: FC = (): JSX.Element => {
+	const [value, setValue] = useState("");
+	const [valid, setValid] = useState(true);
+	const dispatch = useDispatch();
+
+	const addData = (e: React.MouseEvent<HTMLInputElement>) => {
+		e.preventDefault();
+		if (valid) {
+			dispatch({ type: "ADD_COMMENT", payload: value });
+			setValue("");
+		}
+	};
+
+	const checkValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+		setValue(e.target.value);
+		if (e.target.value.length < 20) {
+			setValid(false);
+		} else {
+			setValid(true);
+		}
+	};
+
+	return (
+		<div className="container__text-area">
+			<div className="container__content__text-area">
+				<form>
+					<span className="review">
+						<b>Введите ваш отзыв:</b>
+					</span>
+					<textarea
+						className={valid ? "text-area" : "text-area-active"}
+						placeholder="Необходимо ввести не менее 20 символов"
+						value={value}
+						name="comment"
+						onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+							checkValue(e)
+						}
+					></textarea>
+
+					<p>
+						<input
+							type="submit"
+							onClick={(e: React.MouseEvent<HTMLInputElement>) => addData(e)}
+						/>
+					</p>
+				</form>
+			</div>
+		</div>
+	);
+};
+
+export default TextArea;

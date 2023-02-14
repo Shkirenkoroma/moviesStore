@@ -1,0 +1,31 @@
+.movieBox {
+	max-width: 350px;
+	width: 100%;
+	height: 450px;
+	background-color: red;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.movieBox__fullTitle {
+	margin-bottom: 5px;
+	font-size: 20px;
+	font-weight: 700;
+}
+.movieBox__image {
+	max-width: 100px;
+	width: 100%;
+}
+.movieBox__year {
+}
+.movieBox__crew {
+	max-width: 235px;
+	width: 100%;
+}
+.movieBox__imDbRating {
+}
+.describe {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}

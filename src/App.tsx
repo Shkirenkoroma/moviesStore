@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Login from "./pages/login";
+import Registration from "./pages/registration";
+import Success from "./pages/success";
+import MainRoom from "./pages/mainroom";
+import ErrorReg from "./pages/error/error_reg";
+import ErrorLogin from "./pages/error/error_login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = (): JSX.Element => {
+	return (
+		<BrowserRouter>
+			<div className="App">
+				<Routes>
+					<Route path="/*" element={<Login />} />
+					<Route path="/room" element={<MainRoom />} />
+					<Route path="/reg" element={<Registration />} />
+					<Route path="/excelent" element={<Success />} />
+					<Route path="/error" element={<ErrorReg />} />
+					<Route path="/error" element={<ErrorLogin />} />
+				</Routes>
+			</div>
+		</BrowserRouter>
+	);
+};
 
 export default App;

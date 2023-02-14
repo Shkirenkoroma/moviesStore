@@ -1,0 +1,35 @@
+.container {
+	max-width: 1200px;
+	width: 100%;
+}
+.container__content {
+	max-width: 1000px;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+button.button {
+	background-color: #cdcdcd;
+	border: none;
+	border-radius: 15px;
+	padding: 15px;
+	margin-top: 40px;
+}
+
+button.button:hover {
+	opacity: 0.8;
+	transition: opacity 500ms;
+	cursor: pointer;
+}
+.button span {
+	font-weight: 700;
+}
+
+.errorSentenses {
+	font-size: 46px;
+	color: red;
+	font-weight: 700;
+}
