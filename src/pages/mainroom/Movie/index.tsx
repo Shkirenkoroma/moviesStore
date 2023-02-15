@@ -1,9 +1,9 @@
 import "./style.css";
 
-const Movie = ({ item, setModalActive }: any) => {
+const Movie = ({ item, setDataMovie }: any) => {
 
 	return (
-		<div className="movieBox" onClick={setModalActive}>
+		<div className="movieBox" onClick={setDataMovie}>
 			<div className="movieBox__fullTitle">{item.fullTitle}</div>
 			<div className="movieBox__image">
 				<img src={item.image} alt="label" />

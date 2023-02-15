@@ -6,10 +6,11 @@ import ReactPaginate from "react-paginate";
 import logo from "../../assets/img/movies.png";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
+import { addMovieCard } from "../../redux/actions";
 
 const MainRoom = ({}) => {
 	//@ts-ignore
-	const stateData = useSelector(state => state.moviesData.movies)
+	const stateData = useSelector((state) => state.moviesData.movies);
 	const [modalActive, setModalActive] = useState(false);
 	const [currentItems, setCurrentItems] = useState([]);
 	const [pageCount, setPageCount] = useState(0);
@@ -17,9 +18,10 @@ const MainRoom = ({}) => {
 	const itemsPerPage = 6;
 	const dispatch = useDispatch();
 
-	const setDataMovie = () => {
+	const setDataMovie = (item: any) => {
 		setModalActive(!modalActive);
-		// dispatch({type:"ADD_DATA", payload:item});
+		dispatch(addMovieCard(item));
+		console.log('item after dispatch', item)
 	};
 
 	useEffect(() => {
@@ -60,13 +62,14 @@ const MainRoom = ({}) => {
 			</div>
 			<div className="movies__boxes">
 				{currentItems.map((item: any) => (
-					<Movie key={item.id} item={item} setModalActive={setDataMovie}/>
+					<Movie
+						key={item.id}
+						item={item}
+						setDataMovie={() => setDataMovie(item)}
+					/>
 				))}
 			</div>
-			<Modal
-				modalActive={modalActive}
-				setModalActive={setModalActive}
-			/>
+			<Modal modalActive={modalActive} setModalActive={setModalActive} />
 			<ReactPaginate
 				breakLabel="..."
 				nextLabel="next >"
