@@ -65,6 +65,7 @@ const MainRoom = ({}) => {
 			</div>
 			<Modal
 				modalActive={modalActive}
+				setModalActive={setModalActive}
 			/>
 			<ReactPaginate
 				breakLabel="..."

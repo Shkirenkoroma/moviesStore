@@ -15,7 +15,7 @@ const Modal: FC<any> = ({
 	return (
 		<div
 			className={modalActive ? "modal__container-active" : "modal__container"}
-		>
+		 onClick={()=>setModalActive(!modalActive)}>
 			<div
 				className="modal__container__content"
 				onClick={(e) => e.stopPropagation()}
