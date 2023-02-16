@@ -6,6 +6,7 @@ export const getApi = async () => {
 	return response;
 };
 export const getReview = async () => {
+	console.log('вызов функции запроса api')
 	const review = "https://imdb-api.com/en/api/reviews/k_0caudzfv/{id}";
 	const response = await axios.get(review).then((response) => response.data.items);
 	return response;

@@ -9,7 +9,7 @@ const Modal: FC<any> = ({
 }): JSX.Element => {
 	const review = useSelector((state: any) => state.reviews);
 	const movieCard = useSelector((state:any) => state.moviesReducer.data)
-	console.log('movieCard', movieCard)
+
 	return (
 		<div
 			className={modalActive ? "modal__container-active" : "modal__container"}
