@@ -13,7 +13,3 @@ export function* workerSagaReview(action:any) {
 export function* watchGetReview() {
 	yield takeEvery(GET_REVIEWS, workerSagaReview);
 }
-
-// export default function* reviewsSaga() {
-// 	yield watchGetReview();
-// }

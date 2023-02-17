@@ -2,8 +2,8 @@ import { FC } from "react";
 import "./style.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-// import { ADD_COMMENT } from "../../assets/constants/index";
 import { useSelector } from "react-redux";
+import { addReview } from "../../redux/actions";
 
 const TextArea: FC = (): JSX.Element => {
 	const [value, setValue] = useState("");
@@ -13,7 +13,7 @@ const TextArea: FC = (): JSX.Element => {
 	const addData = (e: React.MouseEvent<HTMLInputElement>) => {
 		e.preventDefault();
 		if (valid) {
-			dispatch({ type: "ADD_COMMENT", payload: value });
+			dispatch(addReview(value));
 			setValue("");
 		}
 	};

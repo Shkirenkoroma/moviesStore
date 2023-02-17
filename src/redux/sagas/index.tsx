@@ -7,7 +7,6 @@ import { watchGetReview } from "./review";
 export function* workerSaga() {
 	//@ts-ignore
 	const data = yield call(getMovies);
-	console.log("hits in saga", data);
 	yield put(setMovies(data));
 }
 
