@@ -1,15 +1,14 @@
-import { useDispatch } from "react-redux";
-import { getMovies } from "../../../redux/actions";
+import { FC } from "react";
 import "./style.css";
 
-const OpenButton = ({ nameButton }: any) => {
-	const dispatch = useDispatch();
-	const handleMovies = () => {
-		dispatch(getMovies())
-	}
+interface IOpenButtonProps {
+	nameButton: string;
+}
+
+const OpenButton: FC<IOpenButtonProps> = ({ nameButton }) => {
 	return (
 		<div className="container">
-			<button className="container__button" onClick={handleMovies}>{nameButton}</button>
+			<button className="container__button">{nameButton}</button>
 		</div>
 	);
 };

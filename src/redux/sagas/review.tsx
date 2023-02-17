@@ -1,21 +1,19 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { getApi, getReview } from "../../api";
+import { getReview } from "../../api";
 import { GET_MOVIES, GET_REVIEWS } from "../constans";
-import { setMovies } from "../actions";
+import { setAllReviews, setMovies } from "../actions";
 
-export function* workerSagaReview() {
-   console.log('вечер в хату')
+
+export function* workerSagaReview(action:any) {
 	//@ts-ignore
-	const data = yield call(getReview);
+	const data = yield call(()=>getReview(action.payload));
 	console.log("hits in saga review", data);
+	yield put(setAllReviews(data));
 }
 export function* watchGetReview() {
-	console.log('adada')
 	yield takeEvery(GET_REVIEWS, workerSagaReview);
 }
 
-export default function* rootSaga() {
-	
-	yield watchGetReview();
-	console.log('запуск второй саги')
-}
+// export default function* reviewsSaga() {
+// 	yield watchGetReview();
+// }

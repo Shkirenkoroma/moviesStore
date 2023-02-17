@@ -1,13 +1,14 @@
 import axios from "axios";
 
-export const getApi = async () => {
-	const baseUrl = "https://imdb-api.com/en/api/top250movies/k_0caudzfv";
+export const getMovies = async () => {
+	const baseUrl = "https://imdb-api.com/en/api/top250movies/k_ohug3g2p";
 	const response = await axios.get(baseUrl).then((response) => response.data.items);
 	return response;
 };
-export const getReview = async () => {
-	console.log('вызов функции запроса api')
-	const review = "https://imdb-api.com/en/api/reviews/k_0caudzfv/{id}";
-	const response = await axios.get(review).then((response) => response.data.items);
+
+export const getReview = async (id:number) => {
+	// console.log('вызов функции запроса api')
+	const url = `https://imdb-api.com/en/api/reviews/k_ohug3g2p/${id}`;
+	const response = await axios.get(url).then((response) => response.data.items);
 	return response;
 };

@@ -2,7 +2,7 @@ import { FC } from "react";
 import "./style.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { ADD_COMMENT } from "../../assets/constants/index";
+// import { ADD_COMMENT } from "../../assets/constants/index";
 import { useSelector } from "react-redux";
 
 const TextArea: FC = (): JSX.Element => {

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "./style.css";
 
-interface IInput {
+interface IInputProps {
 	placeholder?: string;
 	value?: string | number;
 	setValue?: any;
@@ -14,7 +14,7 @@ interface IInput {
 	onChange?: any;
 }
 
-const Input: FC<IInput> = ({
+const Input: FC<IInputProps> = ({
 	placeholder,
 	value,
 	id,

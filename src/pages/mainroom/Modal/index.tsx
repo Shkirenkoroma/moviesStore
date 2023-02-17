@@ -7,8 +7,9 @@ const Modal: FC<any> = ({
 	modalActive,
 	setModalActive,
 }): JSX.Element => {
-	const review = useSelector((state: any) => state.reviews);
+	const reviews = useSelector((state: any) => state.moviesReducer.reviews);
 	const movieCard = useSelector((state:any) => state.moviesReducer.data)
+	console.log('reviews', reviews)
 
 	return (
 		<div
@@ -23,7 +24,7 @@ const Modal: FC<any> = ({
 					<img src={movieCard.image} alt="label" />
 				</div>
 				<div className="movieBox__reviews">
-					<div>{review}</div>
+					<div>{reviews?.map((review:any) => review.content)}</div>
 						<div key={movieCard.id} className="movieBox__reviews__container">
 							<div className="movieBox__reviews__row">
 								<div className="movieBox__username"></div>

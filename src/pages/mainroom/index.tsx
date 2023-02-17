@@ -6,7 +6,7 @@ import ReactPaginate from "react-paginate";
 import logo from "../../assets/img/movies.png";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
-import { addMovieCard, getAllreviews } from "../../redux/actions";
+import { addMovieCard, getAllReviews, getMovies } from "../../redux/actions";
 
 const MainRoom = ({}) => {
 	//@ts-ignore
@@ -21,8 +21,12 @@ const MainRoom = ({}) => {
 	const setDataMovie = (item: any) => {
 		setModalActive(!modalActive);
 		dispatch(addMovieCard(item));
-		dispatch(getAllreviews());
-	};
+		dispatch(getAllReviews(item.id));
+		};
+
+	useEffect(() => {
+		dispatch(getMovies());
+	}, []);
 
 	useEffect(() => {
 		const endOffset = itemOffset + itemsPerPage;
