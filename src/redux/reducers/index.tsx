@@ -1,10 +1,12 @@
+import moment from "moment";
+import "moment/locale/en-gb";
+
 const items = {
 	status: "",
 	errors: "",
 	data: {},
 	reviews: [],
 };
-let options = { year: 'numeric', month: 'long', day: 'numeric' };
 const loginData = JSON.parse(localStorage.getItem("user") || "{}");
 export const moviesReducer = (state = items, action: any) => {
 	switch (action.type) {
@@ -15,8 +17,7 @@ export const moviesReducer = (state = items, action: any) => {
 					...state.reviews,
 					{
 						username: loginData.email,
-						//@ts-ignore
-						date: new Date().toLocaleDateString("en-US", options),
+						date: moment().locale("en-gb").format("LL"),
 						content: action.payload,
 					},
 				],

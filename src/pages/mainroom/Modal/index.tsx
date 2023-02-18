@@ -3,10 +3,11 @@ import { FC } from "react";
 import TextArea from "../../../components/textarea/index";
 import { useSelector } from "react-redux";
 
+
 const Modal: FC<any> = ({ modalActive, setModalActive }): JSX.Element => {
 	const reviews = useSelector((state: any) => state.moviesReducer.reviews);
 	const movieCard = useSelector((state: any) => state.moviesReducer.data);
-console.log('state', useSelector(state=>state))
+	
 	return (
 		<div
 			className={modalActive ? "modal__container-active" : "modal__container"}
