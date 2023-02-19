@@ -1,78 +1,77 @@
-.modal__container{
- display: none;
+.modal__container {
+	display: none;
 }
 
-.modal__container-active{
-   display: block;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.4);
-   position: fixed;
-   top: 0;
-   left:0;
-   display: flex;
-   align-items:center;
-   justify-content: center;
+.modal__container-active {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.modal__container__content{
-  padding: 20px;
-  border-radius:12px;
-  background-color: white;
-  height:850px;
-  width: 700px;
-  display: flex;
-    flex-direction: column;
-    align-items: center;
+.modal__container__content {
+	padding: 20px;
+	border-radius: 12px;
+	background-color: white;
+	height: 850px;
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.movieBox__reviews{
-  max-width: 800px;
-  width: 100%;
-  min-height: 235px;
-  overflow-y: scroll;
-  border: 1px solid #cdcdcd;
-  border-radius:5px;
+.movieBox__reviews {
+	max-width: 800px;
+	width: 100%;
+	min-height: 335px;
+	overflow-y: scroll;
+	border: 1px solid #cdcdcd;
+	border-radius: 5px;
 }
 
-.movieBox__reviews__container{
-max-width: 700px;
-width: 100%;
-background-color: #cdcdcd;
-min-height: 50%;
-border-bottom: 1px solid #fdfdfd;
+.movieBox__reviews__container {
+	max-width: 700px;
+	width: 100%;
+	background-color: #cdcdcd;
+	min-height: 50%;
+	border-bottom: 1px solid #fdfdfd;
 }
 
-.movieBox__username{
-margin-bottom: 10px;
-font-size: 24px;
+.movieBox__username {
+	margin-bottom: 10px;
+	font-size: 24px;
 }
-.movieBox__review-date{
- 
- }
-.movieBox__review{
- margin-bottom: 20px;
+.movieBox__review-date {
 }
-
-.fieldReview{
-  max-width: 700px;
-  width: 100%;
+.movieBox__review {
+	margin-bottom: 20px;
 }
 
-.movieBox__image-card{
-  max-width: 800px;
-  min-height: 250px;
-  margin:0 auto;
+.fieldReview {
+	max-width: 700px;
+	width: 100%;
 }
 
-.movieBox__image-card img{
- max-width: 600px;
- width: 100%;
- height: 220px;
+.movieBox__image-card {
+	max-width: 800px;
+	min-height:335px;
+	margin: 0 auto;
 }
 
-.movieBox__reviews__row{
-  display: flex;
-    align-items: center;
-    justify-content: space-between;
+.movieBox__image-card img {
+	max-width: 600px;
+	width: 100%;
+	height: 335px;
+}
+
+.movieBox__reviews__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }

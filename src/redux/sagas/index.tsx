@@ -1,17 +1,19 @@
 import { all, call, put, takeEvery } from "redux-saga/effects";
 import { getMovies, getReview } from "../../api";
-import { GET_MOVIES, GET_REVIEWS } from "../constans";
-import { setMovies } from "../actions";
+import { setMovies, setReviews } from "../reducers";
 import { watchGetReview } from "./review";
 
 export function* workerSaga() {
 	//@ts-ignore
 	const data = yield call(getMovies);
+	console.log('data', data)
 	yield put(setMovies(data));
 }
 
 export function* watchClickSaga() {
-	yield takeEvery(GET_MOVIES, workerSaga);
+	console.log('запускаем вотчер')
+	//@ts-ignore
+	yield takeEvery(setReviews, workerSaga);
 }
 
 export default function* rootSaga() {

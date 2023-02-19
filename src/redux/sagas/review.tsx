@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { getReview } from "../../api";
-import { GET_MOVIES, GET_REVIEWS } from "../constans";
-import { setAllReviews, setMovies } from "../actions";
+import { setAllReviews } from "../actions";
+import { setReviews } from "../reducers";
 
 
 export function* workerSagaReview(action:any) {
@@ -11,5 +11,5 @@ export function* workerSagaReview(action:any) {
 	yield put(setAllReviews(data));
 }
 export function* watchGetReview() {
-	yield takeEvery(GET_REVIEWS, workerSagaReview);
+	yield takeEvery(setReviews, workerSagaReview);
 }

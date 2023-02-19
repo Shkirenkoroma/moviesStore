@@ -4,6 +4,7 @@ import OpenButton from "../../components/buttons/openButton";
 import { NavLink } from "react-router-dom";
 import { FC } from "react";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const Login: FC = (): JSX.Element => {
 	const [email, setEmail] = useState<string | undefined>("");
