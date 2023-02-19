@@ -5,6 +5,7 @@ import {
 	addMovieCard,
 	setReviews,
 	setMovies,
+	getMovies
 } from "../reducers/index";
 
 const allActions = {
@@ -12,6 +13,7 @@ const allActions = {
 	addMovieCard,
 	setReviews,
 	setMovies,
+	getMovies
 };
 
 export const useActions = () => {

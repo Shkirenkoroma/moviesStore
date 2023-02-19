@@ -21,7 +21,7 @@ const MainRoom = ({}) => {
 	const itemsPerPage = 6;
 	const dispatch = useDispatch();
 	//@ts-ignore
-	const { setMovies } = useActions();
+	const { getMovies } = useActions();
 
 	const setDataMovie = (item: any) => {
 		setModalActive(!modalActive);
@@ -31,15 +31,15 @@ const MainRoom = ({}) => {
 
 	useEffect(() => {
 		//@ts-ignore
-		console.log("setMovies", setMovies());
-		dispatch(setMovies());
+		console.log("setMovies", getMovies());
+		dispatch(getMovies());
 	}, []);
 
-	// useEffect(() => {
-	// 	const endOffset = itemOffset + itemsPerPage;
-	// 	setCurrentItems(stateData.slice(itemOffset, endOffset));
-	// 	setPageCount(Math.ceil(stateData.length / itemsPerPage));
-	// }, [itemOffset, itemsPerPage, stateData]);
+	useEffect(() => {
+		const endOffset = itemOffset + itemsPerPage;
+		setCurrentItems(stateData.slice(itemOffset, endOffset));
+		setPageCount(Math.ceil(stateData.length / itemsPerPage));
+	}, [itemOffset, itemsPerPage, stateData]);
 
 	const handlePageClick = (event: any) => {
 		const newOffset = (event.selected * itemsPerPage) % stateData.length;

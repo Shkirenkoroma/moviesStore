@@ -1,13 +1,15 @@
 .movieBox {
 	max-width: 350px;
+	justify-content: space-around;
 	width: 100%;
-	height: 450px;
+	min-height: 485px;
 	background-color: #fdfdfd;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 .movieBox__fullTitle {
+	text-align: center;
 	margin-bottom: 5px;
 	font-size: 20px;
 	font-weight: 700;
@@ -15,11 +17,15 @@
 .movieBox__image {
 	max-width: 100px;
 	width: 100%;
+	max-width: 255px;
+}
+.movieBox__image img{
+	max-width: 250px;
 }
 .movieBox__year {
 }
 .movieBox__crew {
-	max-width: 235px;
+	max-width: 200px;
 	width: 100%;
 }
 .movieBox__imDbRating {

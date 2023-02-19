@@ -2,14 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import moment from "moment";
 import "moment/locale/en-gb";
 
-const initialState = {
-	status: "",
-	errors: "",
-	data: {},
-	reviews: [],
-	movies: [],
-};
-
 // const coordinatesSlice = createSlice({
 // 	name: "coordinates",
 // 	initialState: initialCoordinates,
@@ -27,7 +19,14 @@ const loginData = JSON.parse(localStorage.getItem("user") || "{}");
 
 const moviesSlice = createSlice({
 	name: "movies",
-	initialState: initialState,
+	initialState: {
+		status: "",
+		errors: "",
+		data: {},
+		reviews: [],
+		movies: [],
+		isLoading: false,
+	},
 	reducers: {
 		addComment: (state, action) => {
 			//@ts-ignore
@@ -37,35 +36,39 @@ const moviesSlice = createSlice({
 				content: action.payload,
 			});
 		},
-		addMovieCard:(state, action) => {
-			state.data = action.payload
+		addMovieCard: (state, action) => {
+			state.data = action.payload;
 		},
-		setReviews:(state, action) => {
+		setReviews: (state, action) => {
 			//@ts-ignore
-			state.reviews.push(action.payload)
+			state.reviews.push(action.payload);
 		},
-		setMovies:(state, action) => {
+		getMovies: (state) => {
+			state.isLoading = true;
+		},
+		setMovies: (state, action) => {
+			console.log("action.payload in setMovies", action.payload);
 			//@ts-ignore
-			state.movies.push(action.payload)
-		}
+			state.movies = action.payload ;
+		},
 	},
 });
 
-
 export const moviesReducer = moviesSlice.reducer;
-export const {addComment, addMovieCard, setReviews, setMovies} = moviesSlice.actions;
+export const { addComment, addMovieCard, setReviews, getMovies, setMovies } =
+	moviesSlice.actions;
 
 // export const moviesReducer = (state = initialState, action: any) => {
-	// 	switch (action.type) {
-		// 		case "ADD_COMMENT":
-		// 			return {
-			// 				...state,
-			// 				reviews: [
-				// 					...state.reviews,
-				// 					{
-					// 						username: loginData.email,
-					// 						date: moment().locale("en-gb").format("LL"),
-					// 						content: action.payload,
+// 	switch (action.type) {
+// 		case "ADD_COMMENT":
+// 			return {
+// 				...state,
+// 				reviews: [
+// 					...state.reviews,
+// 					{
+// 						username: loginData.email,
+// 						date: moment().locale("en-gb").format("LL"),
+// 						content: action.payload,
 // 					},
 // 				],
 // 			};
