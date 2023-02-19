@@ -6,9 +6,9 @@ import ReactPaginate from "react-paginate";
 import logo from "../../assets/img/label.png";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
-import { addMovieCard, getAllReviews, getMovies } from "../../redux/actions";
 import { Oval } from "react-loader-spinner";
 import { useActions } from "../../redux/hooks/useActions";
+import { addMovieCard, setReviews, getItemId } from "../../redux/reducers";
 
 const MainRoom = ({}) => {
 	//@ts-ignore
@@ -26,7 +26,9 @@ const MainRoom = ({}) => {
 	const setDataMovie = (item: any) => {
 		setModalActive(!modalActive);
 		dispatch(addMovieCard(item));
-		dispatch(getAllReviews(item.id));
+		console.log('item', item)
+		dispatch(getItemId(item.id));
+		console.log('item.id', item.id)
 	};
 
 	useEffect(() => {

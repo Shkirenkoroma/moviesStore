@@ -5,13 +5,11 @@ import { watchGetReview } from "./review";
 
 export function* workerSaga() {
 	//@ts-ignore
-	const data = yield call(getMoviesArray);
-	console.log('data', data)
+	const data = yield call(getMoviesArrayss);
 	yield put(setMovies(data));
 }
 
 export function* watchClickSaga() {
-	console.log('запускаем вотчер')
 	yield takeEvery('movies/getMovies', workerSaga);
 }
 
