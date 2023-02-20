@@ -18,7 +18,8 @@
 .modal__container__content {
 	padding: 20px;
 	border-radius: 12px;
-	background-color: white;
+	background-image: url('../../../assets/img/background-card.jpg');
+	background-position: center center;
 	height: 850px;
 	width: 600px;
 	display: flex;
@@ -45,13 +46,14 @@
 
 .movieBox__username {
 	margin-bottom: 10px;
-	font-size: 24px;
+	font-size: 30px;
 }
 .movieBox__review-date {
 }
 
 .movieBox__review {
 	margin-bottom: 20px;
+	font-size: 14px;
 }
 
 .fieldReview {

@@ -1,1 +1,0 @@
-export const loginData = JSON.parse(localStorage.getItem("user") || "{}");

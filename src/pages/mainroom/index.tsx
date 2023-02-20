@@ -1,27 +1,26 @@
 import "./style.css";
-import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Movie from "./Movie";
 import ReactPaginate from "react-paginate";
-import logo from "../../assets/img/label.png";
-import { useDispatch, useSelector } from "react-redux";
+import logo from "assets/img/background.png";
 import Modal from "./Modal";
+import { NavLink } from "react-router-dom";
+import { useState, useEffect, FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Oval } from "react-loader-spinner";
-import { useActions } from "../../redux/hooks/useActions";
-import { addMovieCard, getItemId } from "../../redux/reducers/moviesSlice";
-import { loginData } from "../../common/utils/utils";
+import { useActions } from "redux/hooks/useActions";
+import { addMovieCard, getItemId } from "redux/reducers/moviesSlice";
+import { loginData } from "common/utils";
+import Button from "components/buttons/Button";
 
-const MainRoom = ({}) => {
-	//@ts-ignore
-	const stateData = useSelector((state) => state.movies.movies);
-	const [modalActive, setModalActive] = useState(false);
-	const [currentItems, setCurrentItems] = useState([]);
-	const [pageCount, setPageCount] = useState(0);
-	const [itemOffset, setItemOffset] = useState(0);
+const MainRoom: FC = (): JSX.Element => {
+	const stateData = useSelector((state: any) => state.movies.movies);
+	const [modalActive, setModalActive] = useState<boolean>(false);
+	const [currentItems, setCurrentItems] = useState<Array<any>>([]);
+	const [pageCount, setPageCount] = useState<number>(0);
+	const [itemOffset, setItemOffset] = useState<number>(0);
 	const itemsPerPage = 6;
 	const dispatch = useDispatch();
-	//@ts-ignore
-	const { getMovies } = useActions();
+	const { getMovies }:any = useActions();
 
 	const setDataMovie = (item: any) => {
 		setModalActive(!modalActive);
@@ -30,8 +29,6 @@ const MainRoom = ({}) => {
 	};
 
 	useEffect(() => {
-		//@ts-ignore
-		console.log("setMovies", getMovies());
 		dispatch(getMovies());
 	}, []);
 
@@ -61,7 +58,6 @@ const MainRoom = ({}) => {
 						<li className="list__item">Подборки</li>
 						<li className="list__item">Фильмы</li>
 						<li className="list__item">Сериалы</li>
-						<li className="list__item">Топ фильмов</li>
 					</ul>
 				</nav>
 				<div className="user">
@@ -71,9 +67,7 @@ const MainRoom = ({}) => {
 					</div>
 					<div>
 						<NavLink to="/*">
-							<button className="buttonToExit" onClick={() => removeItem()}>
-								Выйти
-							</button>
+							<Button className="buttonToExit" onClick={() => removeItem()} nameButton="Выйти" />
 						</NavLink>
 					</div>
 				</div>

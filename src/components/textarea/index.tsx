@@ -1,14 +1,12 @@
-import { FC } from "react";
 import "./style.css";
+import { FC } from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { addComment } from "../../redux/reducers/moviesSlice";
-
+import { addComment } from "redux/reducers/moviesSlice";
 
 const TextArea: FC = (): JSX.Element => {
-	const [value, setValue] = useState("");
-	const [valid, setValid] = useState(true);
+	const [value, setValue] = useState<string>("");
+	const [valid, setValid] = useState<boolean>(true);
 	const dispatch = useDispatch();
 
 	const addData = (e: React.MouseEvent<HTMLInputElement>) => {

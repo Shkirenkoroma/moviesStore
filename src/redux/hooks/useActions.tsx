@@ -2,7 +2,7 @@ import { bindActionCreators } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { addComment, addMovieCard, setReviews, setMovies, getMovies } from "../reducers/moviesSlice";
 
-const allActions = {
+const allActions:any = {
 	...addComment,
 	addMovieCard,
 	setReviews,
@@ -12,6 +12,5 @@ const allActions = {
 
 export const useActions = () => {
 	const dispatch = useDispatch();
-//@ts-ignore
 	return bindActionCreators(allActions, dispatch);
 };

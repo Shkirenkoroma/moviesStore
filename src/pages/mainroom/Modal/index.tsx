@@ -1,14 +1,13 @@
 import "./style.css";
 import { FC } from "react";
-import TextArea from "../../../components/textarea/index";
 import { useSelector } from "react-redux";
 import { Oval } from "react-loader-spinner";
+import TextArea from "components/textarea";
+import { IModalProps, IResponseReviews } from "types";
 
-const Modal: FC<any> = ({ modalActive, setModalActive }): JSX.Element => {
+const Modal: FC<IModalProps> = ({ modalActive, setModalActive }): JSX.Element => {
 	const reviews = useSelector((state: any) => state.movies.reviews);
 	const movieCard = useSelector((state: any) => state.movies.data);
-	console.log("reviews in modal", reviews);
-	console.log("movieCard", movieCard);
 
 	return (
 		<div
@@ -26,7 +25,7 @@ const Modal: FC<any> = ({ modalActive, setModalActive }): JSX.Element => {
 				{reviews.length ? (
 					<div className="movieBox__reviews">
 						<div>
-							{reviews.map((review: any, index: number) => (
+							{reviews.map((review: IResponseReviews, index: number) => (
 								<div key={index} className="movieBox__reviews__container">
 									<div className="movieBox__reviews__row">
 										<div className="movieBox__username">{review.username}</div>

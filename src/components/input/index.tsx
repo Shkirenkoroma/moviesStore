@@ -1,30 +1,9 @@
 import { FC } from "react";
+import { IInputProps } from "types";
 import "./style.css";
 
-interface IInputProps {
-	placeholder?: string;
-	value?: string | number;
-	setValue?: any;
-	id?: string;
-	type?: string;
-	className: string;
-	name?: string;
-	onBlur?: any;
-	setEmailDirty?: any;
-	onChange?: any;
-}
-
-const Input: FC<IInputProps> = ({
-	placeholder,
-	value,
-	id,
-	type,
-	className,
-	name,
-	onBlur,
-	onChange,
-	setValue,
-}): JSX.Element => {
+const Input: FC<IInputProps> = ({ placeholder, value, id, type, className, name, onBlur, setValue }): JSX.Element => {
+	
 	return (
 		<div className="container">
 			<input

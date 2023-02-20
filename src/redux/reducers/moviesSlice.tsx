@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loginData } from "common/utils";
 import moment from "moment";
 import "moment/locale/en-gb";
-import { loginData } from "../../common/utils/utils";
 
 const moviesSlice = createSlice({
 	name: "movies",
 	initialState: {
-		status: "'idle",
+		status: "idle",
 		errors: "",
 		data: {},
 		reviews: [],
@@ -15,8 +15,7 @@ const moviesSlice = createSlice({
 		movieId: 0,
 	},
 	reducers: {
-		addComment: (state, action) => {
-			//@ts-ignore
+		addComment: (state: any, action) => {
 			state.reviews.push({
 				username: loginData.email,
 				date: moment().locale("en-gb").format("LL"),
@@ -30,14 +29,12 @@ const moviesSlice = createSlice({
 			state.isLoading = true;
 		},
 		setReviews: (state, action) => {
-			//@ts-ignore
 			state.reviews = action.payload;
 		},
 		getMovies: (state) => {
 			state.isLoading = true;
 		},
 		setMovies: (state, action) => {
-			//@ts-ignore
 			state.movies = action.payload;
 		},
 		getFailure:(state, action) => {

@@ -1,6 +1,8 @@
 import "./style.css";
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
+import Button from "components/buttons/Button";
+
 const Error: FC = (): JSX.Element => {
 	return (
 		<div className="container">
@@ -10,7 +12,7 @@ const Error: FC = (): JSX.Element => {
 					процедуру регистрации и продолжите работу.
 				</span>
 				<NavLink to="/reg">
-					<button className="button"><span>Зарегистрироваться</span></button>
+					<Button className="button" nameButton="Зарегистрироваться" />
 				</NavLink>
 			</div>
 		</div>

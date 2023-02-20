@@ -1,29 +1,28 @@
 import "./style.css";
-import Input from "../../components/input/index";
-import Button from "../../components/buttons/Button";
 import { NavLink } from "react-router-dom";
 import { FC } from "react";
 import { useState, useEffect } from "react";
+import { ILocalStorage } from "types";
+import Button from "components/buttons/Button";
+import Input from "components/input";
 
 const Login: FC = (): JSX.Element => {
 	const [email, setEmail] = useState<string | undefined>("");
 	const [password, setPassword] = useState<string | number | undefined>("");
-	const [pathTo, setPathTo] = useState("");
-	const [emailError, setEmailError] = useState("E-mail не может быть пустым");
-	const [passwordError, setPasswordError] = useState(
-		"Пароль не может быть пустым",
-	);
-	const [emailDirty, setEmailDirty] = useState(false);
-	const [passwordDirty, setPasswordDirty] = useState(false);
-	const savedDataUser = JSON.parse(localStorage.getItem("user") || "{}");
-	let firstCheckField = savedDataUser.email;
-	let secondCheckField = savedDataUser.password;
+	const [pathTo, setPathTo] = useState<string>("");
+	const [emailError, setEmailError] = useState<string>("E-mail не может быть пустым");
+	const [passwordError, setPasswordError] = useState<string>("Пароль не может быть пустым");
+	const [emailDirty, setEmailDirty] = useState<boolean>(false);
+	const [passwordDirty, setPasswordDirty] = useState<boolean>(false);
+	const savedDataUser: ILocalStorage = JSON.parse(localStorage.getItem("user") || "{}");
+	let firstCheckField: string = savedDataUser.email;
+	let secondCheckField: string = savedDataUser.password;
 
 	useEffect(() => {
 		checkData();
 	}, [email, password]);
 
-	const checkData = () => {
+	const checkData = (): void => {
 		if (firstCheckField === email && secondCheckField === password) {
 			setPathTo("/room");
 		} else {
@@ -31,7 +30,7 @@ const Login: FC = (): JSX.Element => {
 		}
 	};
 
-	const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const emailHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setEmail(e.target.value);
 		const re =
 			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -42,7 +41,7 @@ const Login: FC = (): JSX.Element => {
 		}
 	};
 
-	const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setPassword(e.target.value);
 		if (e.target.value.length < 4) {
 			setPasswordError("Пароль должен содержать не менее 4 символов");
@@ -51,7 +50,7 @@ const Login: FC = (): JSX.Element => {
 		}
 	};
 
-	const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+	const blurHandler = (e: React.FocusEvent<HTMLInputElement>): void => {
 		switch (e.target.name) {
 			case "email":
 				setEmailDirty(true);

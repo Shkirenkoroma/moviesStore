@@ -1,6 +1,8 @@
+import { FC } from "react";
+import { IMovieProps } from "types";
 import "./style.css";
 
-const Movie = ({ item, setDataMovie }: any) => {
+const Movie: FC<IMovieProps> = ({ item, setDataMovie }): JSX.Element => {
 	return (
 		<div className="movieBox" onClick={setDataMovie}>
 			<div className="movieBox__fullTitle">{item.fullTitle}</div>

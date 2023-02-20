@@ -6,13 +6,15 @@
 	justify-content: space-between;
 	max-width: 1200px;
 	width: 100%;
-	background-color: #cdcdcd;
+	background-color: transparent;
+	backdrop-filter: blur(55px);
 }
 
 .header {
 	max-width: 1200px;
 	width: 100%;
-	background-color: red;
+	background-color: transparent;
+	backdrop-filter: blur(85px);
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
@@ -21,11 +23,22 @@
 }
 
 span.span {
-	font-size: 12px;
 	text-align: center;
-	font-weight: 400;
+	font-weight: 700;
 }
-
+.buttonToExit{
+	background-color:transparent;
+	border:none;
+	height: 45px;
+	border-radius:10px;
+	border: 1px solid #cdcdcd;
+}
+.buttonToExit:hover{
+	cursor: pointer;
+	background-color:#cdcdcd;
+	transition: background-color 700ms;
+	border-radius:10px;
+}
 img {
 	max-width: 80px;
 	width: 100%;
@@ -49,11 +62,15 @@ img {
 
 .list__item:not(:last-child) {
 	margin-right: 55px;
+	
 }
-
+.list__item{
+	font-size: 24px;
+}
 .list__item:hover {
 	cursor: pointer;
 	color: #cdcdcd;
+	transition: color 500ms;
 }
 
 .pagination {
@@ -64,6 +81,7 @@ img {
 	margin-bottom: 1rem;
 	font-size: 1.2rem;
 	gap: 5px;
+	color:#000;
 }
 
 .pagination .page-num {
@@ -74,12 +92,13 @@ img {
 }
 
 .pagination .page-num:hover {
-	background-color: #5ab1bb;
-	color: #fff;
+	background-color: #cdcdcd;
+	color: #000;
+	transition: background-color 700ms;
 }
 
 .pagination .active {
-	background-color: #5ab1bb;
+	background-color: #cdcdcd;
 }
 
 .preloader {
@@ -99,7 +118,8 @@ img {
 
 .welcome {
 	margin-right: 5px;
-	font-weight: 700;
+	font-weight: 400;
+font-size: 18px;
 }
 
 .user__serverdata {
@@ -107,10 +127,11 @@ img {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-right: 10px;
 }
 
 .navigation {
 	padding: 0;
 	margin: 0;
-	max-width: 700px;
+	max-width: 875px;
 }

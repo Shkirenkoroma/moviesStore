@@ -1,25 +1,20 @@
 import "./style.css";
 import { NavLink } from "react-router-dom";
-import Input from "../../components/input";
-import Checkbox from "../../components/checkbox";
 import { FC } from "react";
 import { useState, useEffect } from "react";
-import Button from "../../components/buttons/Button";
+import Button from "components/buttons/Button";
+import Input from "components/input";
+import Checkbox from "components/checkbox";
 
 const Registration: FC = (): JSX.Element => {
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string | number>("");
 	const [checked, setChecked] = useState<boolean>(false);
-
-	const [emailDirty, setEmailDirty] = useState(false);
-	const [passwordDirty, setPasswordDirty] = useState(false);
-
-	const [emailError, setEmailError] = useState("E-mail не может быть пустым");
-	const [passwordError, setPasswordError] = useState(
-		"Пароль не может быть пустым",
-	);
-
-	const [formValid, setFormValid] = useState(false);
+	const [emailDirty, setEmailDirty] = useState<boolean>(false);
+	const [passwordDirty, setPasswordDirty] = useState<boolean>(false);
+	const [emailError, setEmailError] = useState<string>("E-mail не может быть пустым");
+	const [passwordError, setPasswordError] = useState<string>("Пароль не может быть пустым");
+	const [formValid, setFormValid] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (emailError || passwordError || !checked) {
@@ -29,7 +24,7 @@ const Registration: FC = (): JSX.Element => {
 		}
 	}, [emailError, passwordError, checked]);
 
-	const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const emailHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setEmail(e.target.value);
 		const re =
 			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -40,7 +35,7 @@ const Registration: FC = (): JSX.Element => {
 		}
 	};
 
-	const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setPassword(e.target.value);
 		if (e.target.value.length < 4) {
 			setPasswordError("Пароль должен содержать не менее 4 символов");
@@ -49,7 +44,7 @@ const Registration: FC = (): JSX.Element => {
 		}
 	};
 
-	const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+	const blurHandler = (e: React.FocusEvent<HTMLInputElement>): void => {
 		switch (e.target.name) {
 			case "email":
 				setEmailDirty(true);
@@ -61,7 +56,7 @@ const Registration: FC = (): JSX.Element => {
 	};
 
 	const setToLocalStorage = (e: React.MouseEvent<HTMLButtonElement>): void => {
-		let data: any = { email: email, password: password };
+		let data = { email: email, password: password };
 		localStorage.setItem("user", JSON.stringify(data));
 	};
 
@@ -92,9 +87,7 @@ const Registration: FC = (): JSX.Element => {
 					)}
 					<Input
 						onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
-						setValue={(e: React.ChangeEvent<HTMLInputElement>) =>
-							passwordHandler(e)
-						}
+						setValue={(e: React.ChangeEvent<HTMLInputElement>) => passwordHandler(e)}
 						placeholder="Введите пароль"
 						value={password}
 						className="container__input"

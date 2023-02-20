@@ -1,13 +1,13 @@
+import { getMoviesArray } from "common/api/helpers";
 import { all, call, put, takeEvery } from "redux-saga/effects";
-import { getMoviesArray } from "../../common/api/helpers";
+import { ResponseGenerator } from "types";
 import { setMovies, getFailure, setStatus } from "../reducers/moviesSlice";
 import { watchGetReview } from "./reviewSaga";
 
 export function* workerSaga() {
 	try {
 		yield put(setStatus("loading"));
-		//@ts-ignore
-		const data = yield call(getMoviesArrays);
+		const data: ResponseGenerator = yield call(getMoviesArray);
 		yield put(setMovies(data));
 		yield put(setStatus("loaded"));
 	} catch (error) {
