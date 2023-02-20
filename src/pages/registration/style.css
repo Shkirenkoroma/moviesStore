@@ -1,3 +1,8 @@
-.checkData{
- margin-left: 8px;
+.container{
+   width: 29vw;
+
+}
+
+.container__button{
+   width: 21vw;
 }

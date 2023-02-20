@@ -8,8 +8,8 @@ const Error: FC = (): JSX.Element => {
 		<div className="container">
 			<div className="container__content">
 				<span className="errorSentenses">
-					Упс, возможно Вы еще не зарегестрировались, пожалуйста, пройдите
-					процедуру регистрации и продолжите работу.
+					Возникла ошибка. Возможно Вы еще не зарегестрировались или не корректно ввели данные, пожалуйста, пройдите
+					процедуру регистрации или введите еще раз данные акканута.
 				</span>
 				<NavLink to="/reg">
 					<Button className="button" nameButton="Зарегистрироваться" />

@@ -1,6 +1,10 @@
 .container {
 	max-width: 1200px;
 	width: 100%;
+	padding: 0;
+	background-color:transparent;
+	backdrop-filter:blur(10px);
+	border-radius:40px;
 }
 .container__content {
 	max-width: 1000px;
@@ -29,7 +33,7 @@ button.button:hover {
 }
 
 .errorSentenses {
-	font-size: 46px;
-	color: red;
+	font-size: 40px;
+	color: #fdfdfd;
 	font-weight: 700;
 }
