@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import moment from "moment";
 import "moment/locale/en-gb";
+import { loginData } from "../../common/utils/utils";
 
-const loginData = JSON.parse(localStorage.getItem("user") || "{}");
 const moviesSlice = createSlice({
 	name: "movies",
 	initialState: {
-		status: "",
+		status: "'idle",
 		errors: "",
 		data: {},
 		reviews: [],
@@ -40,16 +40,14 @@ const moviesSlice = createSlice({
 			//@ts-ignore
 			state.movies = action.payload;
 		},
+		getFailure:(state, action) => {
+			state.errors = action.payload
+		},
+		setStatus:(state, action) => {
+			state.status = action.payload
+		}
 	},
 });
 
 export const moviesReducer = moviesSlice.reducer;
-export const {
-	addComment,
-	addMovieCard,
-	setReviews,
-	getMovies,
-	getItemId,
-	setMovies,
-} = moviesSlice.actions;
-
+export const { addComment, addMovieCard, setReviews, getMovies, getItemId, setMovies, getFailure, setStatus } = moviesSlice.actions;

@@ -1,10 +1,9 @@
 import "./style.css";
 import Input from "../../components/input/index";
-import OpenButton from "../../components/buttons/openButton";
+import Button from "../../components/buttons/Button";
 import { NavLink } from "react-router-dom";
 import { FC } from "react";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 
 const Login: FC = (): JSX.Element => {
 	const [email, setEmail] = useState<string | undefined>("");
@@ -26,10 +25,8 @@ const Login: FC = (): JSX.Element => {
 
 	const checkData = () => {
 		if (firstCheckField === email && secondCheckField === password) {
-			console.log("Все хорошо, ты проходишь на главную страницу");
 			setPathTo("/room");
 		} else {
-			console.log("Вы еще не зарегистрировлись");
 			setPathTo("/error");
 		}
 	};
@@ -100,7 +97,7 @@ const Login: FC = (): JSX.Element => {
 						className="container__input"
 					/>
 					<NavLink to={pathTo}>
-						<OpenButton nameButton={"Авторизироваться"} />
+						<Button nameButton={"Авторизироваться"} className={'container__button'}/>
 					</NavLink>
 				</div>
 				<div className="registration">

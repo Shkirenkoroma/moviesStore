@@ -1,10 +1,10 @@
 import "./style.css";
 import { NavLink } from "react-router-dom";
 import Input from "../../components/input";
-import RegButton from "../../components/buttons/regButton";
 import Checkbox from "../../components/checkbox";
 import { FC } from "react";
 import { useState, useEffect } from "react";
+import Button from "../../components/buttons/Button";
 
 const Registration: FC = (): JSX.Element => {
 	const [email, setEmail] = useState<string>("");
@@ -112,12 +112,12 @@ const Registration: FC = (): JSX.Element => {
 						</label>
 					</div>
 					<NavLink to="/excelent">
-						<RegButton
-							onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+						<Button onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
 								setToLocalStorage(e)
 							}
-							disabled={!formValid}
-						/>
+							nameButton="Зарегистрироваться"
+							className="container__button"
+							disabled={!formValid}/>
 					</NavLink>
 				</div>
 				<div className="registration"></div>

@@ -49,6 +49,7 @@
 }
 .movieBox__review-date {
 }
+
 .movieBox__review {
 	margin-bottom: 20px;
 }
@@ -60,7 +61,7 @@
 
 .movieBox__image-card {
 	max-width: 800px;
-	min-height:335px;
+	min-height: 335px;
 	margin: 0 auto;
 }
 

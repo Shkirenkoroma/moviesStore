@@ -49,14 +49,11 @@ img {
 
 .list__item:not(:last-child) {
 	margin-right: 55px;
-	
 }
+
 .list__item:hover {
 	cursor: pointer;
-	
-	
-color: #cdcdcd;
-
+	color: #cdcdcd;
 }
 
 .pagination {

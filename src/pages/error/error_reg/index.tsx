@@ -1,7 +1,7 @@
 import "./style.css";
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
-const ErrorReg: FC = (): JSX.Element => {
+const Error: FC = (): JSX.Element => {
 	return (
 		<div className="container">
 			<div className="container__content">
@@ -17,4 +17,4 @@ const ErrorReg: FC = (): JSX.Element => {
 	);
 };
 
-export default ErrorReg;
+export default Error;

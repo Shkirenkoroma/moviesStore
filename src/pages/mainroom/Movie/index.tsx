@@ -1,7 +1,6 @@
 import "./style.css";
 
 const Movie = ({ item, setDataMovie }: any) => {
-
 	return (
 		<div className="movieBox" onClick={setDataMovie}>
 			<div className="movieBox__fullTitle">{item.fullTitle}</div>
@@ -13,7 +12,6 @@ const Movie = ({ item, setDataMovie }: any) => {
 				<div className="movieBox__imDbRating">Рейтинг: {item.imDbRating}</div>
 				<div className="movieBox__year">Год выпуска: {item.year}</div>
 			</div>
-			
 		</div>
 	);
 };

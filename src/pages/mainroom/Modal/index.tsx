@@ -7,10 +7,8 @@ import { Oval } from "react-loader-spinner";
 const Modal: FC<any> = ({ modalActive, setModalActive }): JSX.Element => {
 	const reviews = useSelector((state: any) => state.movies.reviews);
 	const movieCard = useSelector((state: any) => state.movies.data);
-console.log('reviews in modal', reviews)
-console.log('movieCard', movieCard)
-
-
+	console.log("reviews in modal", reviews);
+	console.log("movieCard", movieCard);
 
 	return (
 		<div

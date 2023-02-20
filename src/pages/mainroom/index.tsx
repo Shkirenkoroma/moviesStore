@@ -8,12 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
 import { Oval } from "react-loader-spinner";
 import { useActions } from "../../redux/hooks/useActions";
-import { addMovieCard, setReviews, getItemId } from "../../redux/reducers";
+import { addMovieCard, getItemId } from "../../redux/reducers/moviesSlice";
+import { loginData } from "../../common/utils/utils";
 
 const MainRoom = ({}) => {
 	//@ts-ignore
 	const stateData = useSelector((state) => state.movies.movies);
-	console.log("stateData", stateData);
 	const [modalActive, setModalActive] = useState(false);
 	const [currentItems, setCurrentItems] = useState([]);
 	const [pageCount, setPageCount] = useState(0);
@@ -26,9 +26,7 @@ const MainRoom = ({}) => {
 	const setDataMovie = (item: any) => {
 		setModalActive(!modalActive);
 		dispatch(addMovieCard(item));
-		console.log('item', item)
 		dispatch(getItemId(item.id));
-		console.log('item.id', item.id)
 	};
 
 	useEffect(() => {
@@ -48,7 +46,6 @@ const MainRoom = ({}) => {
 		setItemOffset(newOffset);
 	};
 
-	const loginData = JSON.parse(localStorage.getItem("user") || "{}");
 	const removeItem = () => {
 		localStorage.removeItem("user");
 	};

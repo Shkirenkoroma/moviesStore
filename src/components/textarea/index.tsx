@@ -3,7 +3,7 @@ import "./style.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { addComment } from "../../redux/reducers";
+import { addComment } from "../../redux/reducers/moviesSlice";
 
 
 const TextArea: FC = (): JSX.Element => {
@@ -44,7 +44,6 @@ const TextArea: FC = (): JSX.Element => {
 							checkValue(e)
 						}
 					></textarea>
-
 					<p>
 						<input
 							type="submit"
