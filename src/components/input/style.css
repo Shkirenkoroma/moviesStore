@@ -1,6 +1,8 @@
 .container__input {
 	outline: none;
 	height: 30px;
-	width: 20vw;
-	max-width: 392px;
+	width: 100%;
+	padding: 0;
+	border: none;
+	margin-bottom: 20px;
 }

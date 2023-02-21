@@ -70,7 +70,7 @@ const Login: FC = (): JSX.Element => {
 				</div>
 				<div className="forms">
 					{emailDirty && emailError && (
-						<div style={{ color: "red" }}>{emailError}</div>
+						<div className="error">{emailError}</div>
 					)}
 					<Input
 						placeholder={"Введите почту"}
@@ -95,9 +95,11 @@ const Login: FC = (): JSX.Element => {
 						name="password"
 						className="container__input"
 					/>
+					<div className="container">
 					<NavLink to={pathTo}>
-						<Button nameButton={"Авторизироваться"} className={'container__button'}/>
+						<Button nameButton={"Авторизироваться"} className={'container__button__activate'}/>
 					</NavLink>
+					</div>
 				</div>
 				<div className="registration">
 					<span className="registration__name">Нет аккаунта ?</span>

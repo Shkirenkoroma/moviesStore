@@ -49,6 +49,29 @@
 	font-size: 18px;
 }
 
-.registration{
+.registration {
 	margin-left: 5px;
+}
+
+.forms {
+	max-width: 350px;
+	width: 100%;
+}
+
+.container__button__activate {
+	width: 100%;
+	background-color: coral;
+	border: none;
+	border-radius: 5px;
+}
+
+.container__button__activate:hover {
+	cursor: pointer;
+	opacity: 0.7;
+	transition: all 500ms;
+}
+
+.error {
+	color: red;
+	font-size: 12px;
 }
