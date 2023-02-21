@@ -69,7 +69,7 @@ const Registration: FC = (): JSX.Element => {
 				</div>
 				<div className="forms">
 					{emailDirty && emailError && (
-						<div style={{ color: "red" }}>{emailError}</div>
+						<div className="error">{emailError}</div>
 					)}
 					<Input
 						setValue={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -83,7 +83,7 @@ const Registration: FC = (): JSX.Element => {
 						setEmailDirty={setEmailDirty}
 					/>
 					{passwordDirty && passwordError && (
-						<div style={{ color: "red" }}>{passwordError}</div>
+						<div className="error">{passwordError}</div>
 					)}
 					<Input
 						onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
