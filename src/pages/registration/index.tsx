@@ -104,14 +104,16 @@ const Registration: FC = (): JSX.Element => {
 							Соглашение об обработке персональных данных
 						</label>
 					</div>
+					<div className="container__button">
 					<NavLink to="/excelent">
 						<Button onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
 								setToLocalStorage(e)
 							}
+							className='regbutton'
 							nameButton="Зарегистрироваться"
-							className="container__button"
 							disabled={!formValid}/>
 					</NavLink>
+					</div>
 				</div>
 				<div className="registration"></div>
 			</div>

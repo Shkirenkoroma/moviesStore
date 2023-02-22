@@ -6,10 +6,10 @@ const Button: FC<IButtonProps> = ({
 	nameButton,
 	onClick,
 	disabled,
-	className,
+	className
 }): JSX.Element => {
 	return (
-		<button className={className} disabled={disabled} onClick={onClick}>
+		<button  className={className} disabled={disabled} onClick={onClick}>
 			{nameButton}
 		</button>
 	);
