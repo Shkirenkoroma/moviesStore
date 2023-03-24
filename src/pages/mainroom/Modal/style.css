@@ -18,7 +18,7 @@
 .modal__container__content {
 	padding: 20px;
 	border-radius: 12px;
-	background-image: url('../../../assets/img/background-card.jpg');
+	background-image: url("../../../assets/img/background-card.jpg");
 	background-position: center center;
 	height: 850px;
 	width: 600px;
@@ -77,4 +77,27 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+@media (max-width: 560px) {
+	.modal__container__content {
+		max-width: 250px;
+	}
+	.movieBox__image-card {
+		width: 250px;
+		min-height: 350px;
+	}
+	.movieBox__reviews {
+		max-width: 300px;
+		width: 100%;
+	}
+	.movieBox__review {
+		font-size: 8px;
+	}
+	.movieBox__username {
+		font-size: 10px;
+	}
+	.movieBox__review-date {
+		font-size: 10px;
+	}
 }

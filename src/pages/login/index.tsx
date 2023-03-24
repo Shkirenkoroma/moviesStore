@@ -83,7 +83,7 @@ const Login: FC = (): JSX.Element => {
 						onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
 					/>
 					{passwordDirty && passwordError && (
-						<div style={{ color: "red" }}>{passwordError}</div>
+						<div className="error">{passwordError}</div>
 					)}
 					<Input
 						placeholder={"Введите пароль"}
