@@ -26,18 +26,18 @@ span.span {
 	text-align: center;
 	font-weight: 700;
 }
-.buttonToExit{
-	background-color:transparent;
-	border:none;
+.buttonToExit {
+	background-color: transparent;
+	border: none;
 	height: 45px;
-	border-radius:10px;
+	border-radius: 10px;
 	border: 1px solid #cdcdcd;
 }
-.buttonToExit:hover{
+.buttonToExit:hover {
 	cursor: pointer;
-	background-color:#cdcdcd;
+	background-color: #cdcdcd;
 	transition: background-color 700ms;
-	border-radius:10px;
+	border-radius: 10px;
 }
 img {
 	max-width: 80px;
@@ -62,9 +62,8 @@ img {
 
 .list__item:not(:last-child) {
 	margin-right: 55px;
-	
 }
-.list__item{
+.list__item {
 	font-size: 24px;
 }
 .list__item:hover {
@@ -81,7 +80,7 @@ img {
 	margin-bottom: 1rem;
 	font-size: 1.2rem;
 	gap: 5px;
-	color:#000;
+	color: #000;
 }
 
 .pagination .page-num {
@@ -119,7 +118,7 @@ img {
 .welcome {
 	margin-right: 5px;
 	font-weight: 400;
-font-size: 18px;
+	font-size: 18px;
 }
 
 .user__serverdata {
@@ -134,4 +133,50 @@ font-size: 18px;
 	padding: 0;
 	margin: 0;
 	max-width: 875px;
+}
+
+@media (max-width: 1100px) {
+	.pagination {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 2rem;
+		margin-top: 2rem;
+		font-size: 0.4rem;
+		padding: 0;
+		color: #000;
+	}
+	.list__item {
+		margin-right: 10px !important;
+	}
+	.list__item {
+		font-size: 12px;
+	}
+	.user__serverdata {
+		display: none;
+	}
+	.navigation {
+		max-width: 340px;
+	}
+}
+
+@media (max-width: 560px) {
+	.label {
+		width: 50px;
+		height: 50px;
+	}
+	.buttonToExit {
+		background-color: transparent;
+		font-size: 8px !important ;
+		height: 25px !important;
+		border-radius: 10px;
+		border: 1px solid #cdcdcd;
+	}
+	.navigation {
+		max-width: 340px;
+	}
+	.list__item {
+		font-size: 8px;
+	}
 }

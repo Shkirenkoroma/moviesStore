@@ -5,7 +5,7 @@ import "./style.css";
 const Input: FC<IInputProps> = ({ placeholder, value, id, type, className, name, onBlur, setValue }): JSX.Element => {
 	
 	return (
-		<div className="container">
+		<div className="container__input">
 			<input
 				className={className}
 				type={type}

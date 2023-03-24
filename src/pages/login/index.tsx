@@ -104,7 +104,7 @@ const Login: FC = (): JSX.Element => {
 				<div className="registration">
 					<span className="registration__name">Нет аккаунта ?</span>
 					<NavLink to="/reg" className="registration__link">
-						<span className="registration">Зарегистрируйтесь</span>
+						<span className="registration__text">Зарегистрируйтесь</span>
 					</NavLink>
 				</div>
 			</div>

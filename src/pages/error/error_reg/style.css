@@ -1,10 +1,11 @@
-.container {
-	max-width: 1200px;
+.container__error {
+	margin: 0 auto;
+	background-color: #8d8d8d;
+	height: 600px;
+	padding: 50px;
+	max-width: 600px;
 	width: 100%;
-	padding: 0;
-	background-color:transparent;
-	backdrop-filter:blur(10px);
-	border-radius:40px;
+	border-radius: 40px;
 }
 .container__content {
 	max-width: 1000px;
@@ -24,9 +25,9 @@ button.button {
 }
 
 button.button:hover {
-	opacity: 0.8;
-	transition: opacity 500ms;
+	transition: all  500ms;
 	cursor: pointer;
+	background-color: coral;
 }
 .button span {
 	font-weight: 700;
@@ -36,4 +37,14 @@ button.button:hover {
 	font-size: 40px;
 	color: #fdfdfd;
 	font-weight: 700;
+}
+
+@media (max-width:560px){
+	.errorSentenses{
+		font-size: 20px;
+	}
+	.container__error{
+		height: 400px;
+	}
+
 }

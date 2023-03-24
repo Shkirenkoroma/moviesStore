@@ -50,7 +50,7 @@ const MainRoom: FC = (): JSX.Element => {
 	return (
 		<div className="container__main">
 			<div className="header">
-				<img src={logo} alt="logo" />
+				<img src={logo} className="label" alt="logo" />
 				<nav className="navigation">
 					<ul className="list">
 						<li className="list__item">Главная</li>
@@ -65,11 +65,11 @@ const MainRoom: FC = (): JSX.Element => {
 						<span className="span">{loginData.email}</span>
 						<span className="welcome">Добро пожаловать!</span>
 					</div>
-					<div>
+				
 						<NavLink to="/*">
 							<Button className="buttonToExit" onClick={() => removeItem()} nameButton="Выйти" />
 						</NavLink>
-					</div>
+				
 				</div>
 			</div>
 			{currentItems.length ? (
@@ -99,11 +99,11 @@ const MainRoom: FC = (): JSX.Element => {
 			{currentItems.length ? (
 				<ReactPaginate
 					breakLabel="..."
-					nextLabel="next >"
+					nextLabel=" >"
 					onPageChange={handlePageClick}
 					pageRangeDisplayed={5}
 					pageCount={pageCount}
-					previousLabel="< previous"
+					previousLabel="<"
 					containerClassName="pagination"
 					pageLinkClassName="page-num"
 					previousLinkClassName="page-num"
