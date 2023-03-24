@@ -4,11 +4,11 @@ import Registration from "./pages/registration";
 import Success from "./pages/success";
 import MainRoom from "./pages/mainroom";
 import Error from "./pages/error/error_reg";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
 const App = (): JSX.Element => {
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<div className="App">
 				<Routes>
 					<Route path="/*" element={<Login />} />
@@ -18,7 +18,7 @@ const App = (): JSX.Element => {
 					<Route path="/error" element={<Error />} />
 				</Routes>
 			</div>
-		</BrowserRouter>
+		</HashRouter>
 	);
 };
 
