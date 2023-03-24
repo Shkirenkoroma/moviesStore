@@ -104,7 +104,7 @@ const Registration: FC = (): JSX.Element => {
 							Соглашение об обработке персональных данных
 						</label>
 					</div>
-					<div className="container__button">
+					<div className="container__button__reg">
 					<NavLink to="/excelent">
 						<Button onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
 								setToLocalStorage(e)
@@ -115,7 +115,7 @@ const Registration: FC = (): JSX.Element => {
 					</NavLink>
 					</div>
 				</div>
-				<div className="registration"></div>
+
 			</div>
 		</div>
 	);

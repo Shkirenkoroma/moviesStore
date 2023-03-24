@@ -1,7 +1,5 @@
-.container{
-	
+.container {
 }
-
 
 .container__input {
 	outline: none;
@@ -10,4 +8,11 @@
 	padding: 0;
 	border: none;
 	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
+@media (max-width: 560px) {
+	.container__input {
+		font-size: 11px;
+	}
 }

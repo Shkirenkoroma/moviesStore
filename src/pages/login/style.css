@@ -83,6 +83,16 @@
 }
 
 @media (max-width: 560px) {
+	.wrap__container{
+		width: 65%;
+		padding:30px;
+		height: 275px;
+	}
+	.wrap__container-content{
+		width: 65%;
+		padding:30px;
+		min-height: 60%;
+	}
 	.title__name {
 		font-size: 16px;
 	}
@@ -104,5 +114,11 @@
 	}
 	.registration__link{
 		font-size: 15px
+	}
+	.container__button__activate{
+		font-size: 10px;
+    padding: 10px;
+	}
+	.registration{
 	}
 }
