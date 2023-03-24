@@ -18,7 +18,7 @@
 .modal__container__content {
 	padding: 20px;
 	border-radius: 12px;
-	background-image: url("../../../assets/img/background-card.jpg");
+	background:linear-gradient(#5eb2d0, rgb(120, 78, 78));
 	background-position: center center;
 	height: 850px;
 	width: 600px;
@@ -32,14 +32,14 @@
 	width: 100%;
 	min-height: 335px;
 	overflow-y: scroll;
-	border: 1px solid #cdcdcd;
+	border: 1px solid #c4c0c0;
 	border-radius: 5px;
 }
 
 .movieBox__reviews__container {
 	max-width: 700px;
 	width: 100%;
-	background-color: #cdcdcd;
+	background:linear-gradient(#84adbc, rgb(108, 158, 171));
 	min-height: 50%;
 	border-bottom: 1px solid #fdfdfd;
 }
@@ -49,6 +49,7 @@
 	font-size: 30px;
 }
 .movieBox__review-date {
+	margin-bottom: 10px;
 }
 
 .movieBox__review {

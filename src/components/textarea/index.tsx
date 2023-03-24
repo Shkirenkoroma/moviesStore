@@ -44,6 +44,7 @@ const TextArea: FC = (): JSX.Element => {
 					></textarea>
 					<p>
 						<input
+						className="submitComment"
 							type="submit"
 							onClick={(e: React.MouseEvent<HTMLInputElement>) => addData(e)}
 						/>

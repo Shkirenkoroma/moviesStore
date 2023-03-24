@@ -6,5 +6,16 @@ textarea{
 }
 
 textarea.text-area-active{
-   border:3px solid red;
+   border:1px solid red;
+}
+.submitComment{
+   padding: 6px;
+   border-radius: 10px;
+   border:none;
+}
+
+.submitComment:hover{
+   cursor: pointer;
+   background-color: coral;
+   transition: all 700ms;
 }

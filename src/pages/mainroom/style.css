@@ -27,11 +27,12 @@ span.span {
 	font-weight: 700;
 }
 .buttonToExit {
+	color:#ffffff;
 	background-color: transparent;
 	border: none;
 	height: 45px;
 	border-radius: 10px;
-	border: 1px solid #cdcdcd;
+	border: 1px solid #ffffff;
 }
 .buttonToExit:hover {
 	cursor: pointer;
@@ -139,7 +140,7 @@ img {
 
 @media (max-width: 1100px) {
 	.pagination .page-num {
-		padding: 8px 5px;
+		padding: 1px 1px;
 		cursor: pointer;
 		border-radius: 3px;
 		font-weight: 400;
