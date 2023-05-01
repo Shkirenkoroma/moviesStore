@@ -50,6 +50,7 @@ export interface ILocalStorage {
 }
 
 export interface IModalProps {
+  loginName:string,
 	modalActive: boolean;
 	setModalActive: (modalActive: boolean) => void;
 }

@@ -1,17 +1,17 @@
 .movieBox {
-	max-width: 350px;
-	justify-content: space-around;
-	width: 100%;
-	min-height: 485px;
-	background-color: transparent;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
+	width: 100%;
+	max-width: 350px;
+	min-height: 485px;
+	background-color: transparent;
 }
 .movieBox:hover{
 	cursor: pointer;
-	background-color:#C0C0C0;
 	border-radius:10px;
+	background-color:#C0C0C0;
 	transition: background-color 700ms
 
 }
@@ -19,13 +19,13 @@
 .movieBox__fullTitle {
 	text-align: center;
 	margin-bottom: 5px;
-	font-size: 20px;
 	font-weight: 700;
+	font-size: 20px;
 }
 
 .movieBox__image {
-	max-width: 100px;
 	width: 100%;
+	max-width: 100px;
 	max-width: 255px;
 }
 
@@ -33,15 +33,9 @@
 	max-width: 250px;
 }
 
-.movieBox__year {
-}
-
 .movieBox__crew {
-	max-width: 200px;
 	width: 100%;
-}
-
-.movieBox__imDbRating {
+	max-width: 200px;
 }
 
 .describe {

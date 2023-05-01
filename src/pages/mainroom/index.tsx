@@ -1,16 +1,15 @@
-import "./style.css";
-import Movie from "./Movie";
-import ReactPaginate from "react-paginate";
-import logo from "assets/img/background.png";
-import Modal from "./Modal";
-import { NavLink } from "react-router-dom";
 import { useState, useEffect, FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { Oval } from "react-loader-spinner";
+import ReactPaginate from "react-paginate";
 import { useActions } from "redux/hooks/useActions";
 import { addMovieCard, getItemId } from "redux/reducers/moviesSlice";
-import { loginData } from "common/utils";
+import Movie from "./Movie";
+import Modal from "./Modal";
 import Button from "components/buttons/Button";
+import logo from "assets/img/background.png";
+import "./style.css";
 
 const MainRoom: FC = (): JSX.Element => {
 	const stateData = useSelector((state: any) => state.movies.movies);
@@ -19,7 +18,8 @@ const MainRoom: FC = (): JSX.Element => {
 	const [pageCount, setPageCount] = useState<number>(0);
 	const [itemOffset, setItemOffset] = useState<number>(0);
 	const itemsPerPage = 6;
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const loginName = useSelector((state:any)=> state?.movies?.login ?? '')
 	const { getMovies }:any = useActions();
 
 	const setDataMovie = (item: any) => {
@@ -62,7 +62,7 @@ const MainRoom: FC = (): JSX.Element => {
 				</nav>
 				<div className="user">
 					<div className="user__serverdata">
-						<span className="span">{loginData.email}</span>
+						<span className="span">{loginName}</span>
 						<span className="welcome">Добро пожаловать!</span>
 					</div>
 				
@@ -95,7 +95,7 @@ const MainRoom: FC = (): JSX.Element => {
 					strokeWidthSecondary={2}
 				/>
 			)}
-			<Modal modalActive={modalActive} setModalActive={setModalActive} />
+			<Modal modalActive={modalActive} setModalActive={setModalActive} loginName={loginName}/>
 			{currentItems.length ? (
 				<ReactPaginate
 					breakLabel="..."

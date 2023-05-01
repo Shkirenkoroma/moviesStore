@@ -1,6 +1,6 @@
-import Button from "components/buttons/Button";
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
+import Button from "components/buttons/Button";
 import "./style.css";
 
 const Success: FC = (): JSX.Element => {

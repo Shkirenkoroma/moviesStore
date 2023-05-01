@@ -1,10 +1,10 @@
-import "./style.css";
-import { NavLink } from "react-router-dom";
 import { FC } from "react";
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Button from "components/buttons/Button";
 import Input from "components/input";
 import Checkbox from "components/checkbox";
+import "./style.css";
 
 const Registration: FC = (): JSX.Element => {
 	const [email, setEmail] = useState<string>("");
@@ -72,10 +72,9 @@ const Registration: FC = (): JSX.Element => {
 						<div className="error">{emailError}</div>
 					)}
 					<Input
-						setValue={(e: React.ChangeEvent<HTMLInputElement>) =>
-							emailHandler(e)
+						setValue={emailHandler
 						}
-						onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
+						onBlur={blurHandler}
 						placeholder="Введите почту"
 						value={email}
 						className="container__input"
@@ -86,8 +85,8 @@ const Registration: FC = (): JSX.Element => {
 						<div className="error">{passwordError}</div>
 					)}
 					<Input
-						onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
-						setValue={(e: React.ChangeEvent<HTMLInputElement>) => passwordHandler(e)}
+						onBlur={blurHandler}
+						setValue={passwordHandler}
 						placeholder="Введите пароль"
 						value={password}
 						className="container__input"
@@ -106,9 +105,7 @@ const Registration: FC = (): JSX.Element => {
 					</div>
 					<div className="container__button__reg">
 					<NavLink to="/excelent">
-						<Button onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-								setToLocalStorage(e)
-							}
+						<Button onClick={setToLocalStorage}
 							className='regbutton'
 							nameButton="Зарегистрироваться"
 							disabled={!formValid}/>

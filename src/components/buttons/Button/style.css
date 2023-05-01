@@ -1,18 +1,14 @@
-.container {
-	
-}
-
 .container__button {
-	height: 30px;
 	width: 100%;
-	background-color: coral;
-	border: none;
+	height: 30px;
 	margin-top:10px;
+	border: none;
 	border-radius:10px;
+	background-color: coral;
 }
 
 .container__button:hover {
 	cursor: pointer;
-	opacity: 0.7;
 	transition: opacity 300ms;
+	opacity: 0.7;
 }

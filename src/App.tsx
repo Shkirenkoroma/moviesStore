@@ -1,12 +1,13 @@
-import "./App.css";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Login from "./pages/login";
 import Registration from "./pages/registration";
 import Success from "./pages/success";
 import MainRoom from "./pages/mainroom";
 import Error from "./pages/error/error_reg";
-import { Routes, Route, HashRouter } from "react-router-dom";
+import "./App.css";
 
 const App = (): JSX.Element => {
+  
 	return (
 		<HashRouter>
 			<div className="App">

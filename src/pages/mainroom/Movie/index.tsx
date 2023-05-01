@@ -3,6 +3,7 @@ import { IMovieProps } from "types";
 import "./style.css";
 
 const Movie: FC<IMovieProps> = ({ item, setDataMovie }): JSX.Element => {
+  
 	return (
 		<div className="movieBox" onClick={setDataMovie}>
 			<div className="movieBox__fullTitle">{item.fullTitle}</div>

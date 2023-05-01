@@ -1,30 +1,30 @@
 .wrap__container {
-	max-width: 600px;
-	width: 100%;
-	height: 600px;
-	border: 2px solid #000;
-	margin:100px auto;
-	background-color: #cdcdcd;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	border-radius: 20px;
+	width: 100%;
+	max-width: 600px;
+	height: 600px;
+	margin:100px auto;
 	padding: 10px 30px;
+	border: 2px solid #000;
+	border-radius: 20px;
+	background-color: #cdcdcd;
 }
 
 .wrap__container-content {
-	max-width: 500px;
-	width: 100%;
-	min-height: 500px;
-	border: 2px solid #000;
-	margin: 0 auto;
-	background-color: #cdcdcd;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 	gap: 20px;
+	width: 100%;
+	max-width: 500px;
+	min-height: 500px;
+	margin: 0 auto;
+	border: 2px solid #000;
 	border-radius: 20px;
+	background-color: #cdcdcd;
 }
 
 .title {
@@ -35,8 +35,8 @@
 }
 
 .title__name {
-	font-size: 24px;
 	font-weight: 700;
+	font-size: 24px;
 }
 
 .title__subname {
@@ -45,31 +45,31 @@
 }
 
 .registration__link {
+	font-weight: 700;
 	text-decoration: none;
 	color: coral;
-	font-weight: 700;
 	font-size: 18px;
 }
 
 .registration {
-	margin-left: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 	max-width: 350px;
-    width: 100%;
-	 display: flex;
-    justify-content: space-evenly;
+	margin-left: 5px;
 }
 
 .forms {
-	max-width: 350px;
 	width: 100%;
+	max-width: 350px;
 }
 
 .container__button__activate {
 	width: 100%;
-	background-color: coral;
+	padding: 5px;
 	border: none;
 	border-radius: 5px;
-	padding: 5px;
+	background-color: coral;
 }
 
 .container__button__activate:hover {
@@ -83,17 +83,15 @@
 }
 
 @media (max-width: 560px) {
-	
-	
 	.wrap__container{
 		width: 65%;
-		padding:30px;
 		height: 275px;
+		padding:30px;
 	}
 	.wrap__container-content{
 		width: 65%;
-		padding:30px;
 		min-height: 60%;
+		padding:30px;
 	}
 	.title__name {
 		font-size: 16px;
@@ -102,25 +100,23 @@
 		font-size: 12px;
 	}
 	.forms {
-		max-width: 145px;
 		width: 100%;
+		max-width: 145px;
 	}
 	.container__input::placeholder {
 		padding-left: 10px;
 	}
 	.registration{
-		flex-wrap: wrap;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 	.registration__link{
 		font-size: 15px
 	}
 	.container__button__activate{
-		font-size: 10px;
     padding: 10px;
-	}
-	.registration{
+		font-size: 10px;
 	}
 }

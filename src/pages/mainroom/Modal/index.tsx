@@ -1,11 +1,11 @@
-import "./style.css";
 import { FC } from "react";
 import { useSelector } from "react-redux";
 import { Oval } from "react-loader-spinner";
 import TextArea from "components/textarea";
 import { IModalProps, IResponseReviews } from "types";
+import "./style.css";
 
-const Modal: FC<IModalProps> = ({ modalActive, setModalActive }): JSX.Element => {
+const Modal: FC<IModalProps> = ({ modalActive, setModalActive, loginName }): JSX.Element => {
 	const reviews = useSelector((state: any) => state.movies.reviews);
 	const movieCard = useSelector((state: any) => state.movies.data);
 
@@ -50,7 +50,7 @@ const Modal: FC<IModalProps> = ({ modalActive, setModalActive }): JSX.Element =>
 					/>
 				)}
 				<div className="fieldReview">
-					<TextArea />
+					<TextArea loginName={loginName}/>
 				</div>
 			</div>
 		</div>

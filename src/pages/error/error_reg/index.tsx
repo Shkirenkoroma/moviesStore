@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Button from "components/buttons/Button";
 
 const Error: FC = (): JSX.Element => {
+  
 	return (
 		<div className="container__error">
 			<div className="container__content">

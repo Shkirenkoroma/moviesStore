@@ -1,8 +1,8 @@
 textarea{
-   max-width: 585px;
-   width: 100%;
-   height:100px;
-   outline: none;
+  width: 100%;
+  max-width: 585px;
+  height:100px;
+  outline: none;
 }
 
 textarea.text-area-active{
@@ -10,8 +10,8 @@ textarea.text-area-active{
 }
 .submitComment{
    padding: 6px;
-   border-radius: 10px;
    border:none;
+   border-radius: 10px;
 }
 
 .submitComment:hover{
