@@ -47,10 +47,10 @@ const moviesSlice = createSlice({
     setMovies: (state, action) => {
       state.movies = action.payload;
     },
-    getFailure: (state, action) => {
+    getFailure: (state, action:PayloadAction<string>) => {
       state.errors = action.payload
     },
-    setStatus: (state, action) => {
+    setStatus: (state, action:PayloadAction<string>) => {
       state.status = action.payload
     }
   },

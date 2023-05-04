@@ -42,9 +42,7 @@ const TextArea: FC<IPropsArea> = ({ loginName }): JSX.Element => {
             placeholder="Необходимо ввести не менее 20 символов"
             value={value}
             name="comment"
-            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-              checkValue(e)
-            }
+            onChange={checkValue}
           ></textarea>
           <p>
             <input

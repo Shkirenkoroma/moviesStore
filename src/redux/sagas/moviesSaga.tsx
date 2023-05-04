@@ -11,15 +11,11 @@ export function* workerSaga() {
 		yield put(setMovies(data));
 		yield put(setStatus("loaded"));
 	} catch (error) {
-		yield put(getFailure(error));
+		yield put(getFailure("error"));
 		yield put(setStatus("failed"));
 	}
 }
 
 export function* watchClickSaga() {
 	yield takeEvery("movies/getMovies", workerSaga);
-}
-
-export default function* rootSaga() {
-	yield all([watchClickSaga(), watchGetReview()]);
 }

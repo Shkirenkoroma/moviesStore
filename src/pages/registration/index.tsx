@@ -5,6 +5,7 @@ import Button from "components/buttons/Button";
 import Input from "components/input";
 import Checkbox from "components/checkbox";
 import "./style.css";
+import { emailValid } from "assets/common";
 
 const Registration: FC = (): JSX.Element => {
 	const [email, setEmail] = useState<string>("");
@@ -26,8 +27,7 @@ const Registration: FC = (): JSX.Element => {
 
 	const emailHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setEmail(e.target.value);
-		const re =
-			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		const re = emailValid;
 		if (!re.test(String(e.target.value).toLowerCase())) {
 			setEmailError("Некорректный e-mail");
 		} else {
@@ -112,7 +112,6 @@ const Registration: FC = (): JSX.Element => {
 					</NavLink>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	);

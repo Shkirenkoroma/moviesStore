@@ -7,6 +7,7 @@ import Button from "components/buttons/Button";
 import Input from "components/input";
 import { ILocalStorage } from "types";
 import "./style.css";
+import { emailValid } from "assets/common";
 
 const Login: FC = (): JSX.Element => {
   const [email, setEmail] = useState<string>("");
@@ -35,8 +36,7 @@ const Login: FC = (): JSX.Element => {
 
   const emailHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = emailValid;
     if (!re.test(String(e.target.value).toLowerCase())) {
       setEmailError("Некорректный e-mail");
     } else {
@@ -84,9 +84,7 @@ const Login: FC = (): JSX.Element => {
             placeholder={"Введите почту"}
             value={email}
             className="container__input"
-            setValue={(e: React.ChangeEvent<HTMLInputElement>) =>
-              emailHandler(e)
-            }
+            setValue={emailHandler}
             name="email"
             onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
           />
@@ -97,9 +95,7 @@ const Login: FC = (): JSX.Element => {
             placeholder={"Введите пароль"}
             value={password}
             onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
-            setValue={(e: React.ChangeEvent<HTMLInputElement>) =>
-              passwordHandler(e)
-            }
+            setValue={passwordHandler}
             name="password"
             className="container__input"
           />

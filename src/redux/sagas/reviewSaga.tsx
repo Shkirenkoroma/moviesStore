@@ -10,7 +10,7 @@ export function* workerSagaReview(action: any) {
 		yield put(setReviews(data));
 		yield put(setStatus("loaded"));
 	} catch (error) {
-		yield put(getFailure(error));
+		yield put(getFailure("error"));
 		yield put(setStatus("failed"));
 	}
 }
