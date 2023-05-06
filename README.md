@@ -1,4 +1,4 @@
-### Live-версия проекта доступна по ссылке https://shkirenkoroma.github.io/moviesStore/
+###Live-версия проекта доступна по ссылке https://shkirenkoroma.github.io/moviesStore/
 Проект включает в себя первичную авторизацию (регистрацию при необходимости) с валидацией, с сохранением информации в localstorage для проверки на зарегистрированность
 ![image](https://user-images.githubusercontent.com/61347452/228910789-dfd51d6a-d006-4711-9e9d-8853d480ad13.png)
 ![image](https://user-images.githubusercontent.com/61347452/228910980-35d9d3eb-06d9-42d3-87d2-615b08e6f36f.png)
