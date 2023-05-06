@@ -24,10 +24,12 @@ const moviesSlice = createSlice({
       state.password = action.payload
     },
     addComment: (state: any, action) => {
-      state.reviews.push({
-        username: loginData.email,
+      console.log('action', action.payload)
+      const {login, comment} = action.payload;
+        state.reviews.push({
+        username: login,
         date: moment().locale("en-gb").format("LL"),
-        content: action.payload,
+        content: comment,
       });
     },
     addMovieCard: (state, action) => {
