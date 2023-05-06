@@ -1,4 +1,3 @@
-import "./style.css";
 import { FC } from "react";
 import { ICheckbox } from "types";
 

@@ -6,8 +6,8 @@ import { inputLogin, inputPassword } from "redux/reducers/moviesSlice";
 import Button from "components/buttons/Button";
 import Input from "components/input";
 import { ILocalStorage } from "types";
+import { emailValid } from "common/utils";
 import "./style.css";
-import { emailValid } from "assets/common";
 
 const Login: FC = (): JSX.Element => {
   const [email, setEmail] = useState<string>("");
@@ -86,7 +86,7 @@ const Login: FC = (): JSX.Element => {
             className="container__input"
             setValue={emailHandler}
             name="email"
-            onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
+            onBlur={blurHandler}
           />
           {passwordDirty && passwordError && (
             <div className="error">{passwordError}</div>
@@ -94,7 +94,7 @@ const Login: FC = (): JSX.Element => {
           <Input
             placeholder={"Введите пароль"}
             value={password}
-            onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurHandler(e)}
+            onBlur={blurHandler}
             setValue={passwordHandler}
             name="password"
             className="container__input"

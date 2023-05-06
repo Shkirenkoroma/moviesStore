@@ -1,8 +1,7 @@
 import { getMoviesArray } from "common/api/helpers";
-import { all, call, put, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { ResponseGenerator } from "types";
 import { setMovies, getFailure, setStatus } from "../reducers/moviesSlice";
-import { watchGetReview } from "./reviewSaga";
 
 export function* workerSaga() {
 	try {

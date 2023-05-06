@@ -1,6 +1,6 @@
 .modal__container {
 	display: none;
-}
+};
 
 .modal__container-active {
 	position: fixed;
@@ -12,7 +12,7 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
-}
+};
 
 .modal__container__content {
 	display: flex;
@@ -24,7 +24,7 @@
 	border-radius: 12px;
 	background:linear-gradient(#5eb2d0, rgb(120, 78, 78));
 	background-position: center center;
-}
+};
 
 .movieBox__reviews {
 	width: 100%;
@@ -33,7 +33,7 @@
 	border: 1px solid #c4c0c0;
 	border-radius: 5px;
 	overflow-y: scroll;
-}
+};
 
 .movieBox__reviews__container {
 	width: 100%;
@@ -41,43 +41,44 @@
 	min-height: 50%;
 	border-bottom: 1px solid #fdfdfd;
 	background:linear-gradient(#84adbc, rgb(108, 158, 171));
-}
+};
 
 .movieBox__username {
 	margin-bottom: 10px;
 	font-size: 30px;
-}
+};
+
 .movieBox__review-date {
 	margin-bottom: 10px;
-}
+};
 
 .movieBox__review {
 	margin-bottom: 20px;
 	font-size: 14px;
-}
+};
 
 .fieldReview {
 	width: 100%;
 	max-width: 700px;
-}
+};
 
 .movieBox__image-card {
 	max-width: 800px;
 	min-height: 335px;
 	margin: 0 auto;
-}
+};
 
 .movieBox__image-card img {
 	width: 100%;
 	max-width: 600px;
 	height: 335px;
-}
+};
 
 .movieBox__reviews__row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
+};
 
 @media (max-width: 560px) {
 	.modal__container__content {
@@ -100,4 +101,4 @@
 	.movieBox__review-date {
 		font-size: 10px;
 	}
-}
+};

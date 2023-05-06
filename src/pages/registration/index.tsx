@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 import Button from "components/buttons/Button";
 import Input from "components/input";
 import Checkbox from "components/checkbox";
+import { emailValid } from "common/utils";
 import "./style.css";
-import { emailValid } from "assets/common";
 
 const Registration: FC = (): JSX.Element => {
 	const [email, setEmail] = useState<string>("");

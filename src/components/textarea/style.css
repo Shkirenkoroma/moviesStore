@@ -3,19 +3,20 @@ textarea{
   max-width: 585px;
   height:100px;
   outline: none;
-}
+};
 
 textarea.text-area-active{
    border:1px solid red;
-}
+};
+
 .submitComment{
    padding: 6px;
    border:none;
    border-radius: 10px;
-}
+};
 
 .submitComment:hover{
    cursor: pointer;
    background-color: coral;
    transition: all 700ms;
-}
+};

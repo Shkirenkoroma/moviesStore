@@ -1,9 +1,9 @@
 .title__success{
 	text-align: center;
-}
+};
 
 @media (max-width: 560px) {
    .title__success{
 		text-align: center;
 	}
-}
+};

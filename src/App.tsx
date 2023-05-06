@@ -1,26 +1,15 @@
-import { Routes, Route, HashRouter } from "react-router-dom";
-import Login from "./pages/login";
-import Registration from "./pages/registration";
-import Success from "./pages/success";
-import MainRoom from "./pages/mainroom";
-import Error from "./pages/error/error_reg";
-import "./App.css";
+import { FC } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { routes } from 'routes'
+import './App.css'
 
-const App = (): JSX.Element => {
-  
-	return (
-		<HashRouter>
-			<div className="App">
-				<Routes>
-					<Route path="/*" element={<Login />} />
-					<Route path="/room" element={<MainRoom />} />
-					<Route path="/reg" element={<Registration />} />
-					<Route path="/excelent" element={<Success />} />
-					<Route path="/error" element={<Error />} />
-				</Routes>
-			</div>
-		</HashRouter>
-	);
-};
+const App:FC = (): JSX.Element => {
 
-export default App;
+  return (
+    <div className="App">
+      <RouterProvider router={createBrowserRouter(routes)} />
+    </div>
+  )
+}
+
+export default App

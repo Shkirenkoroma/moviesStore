@@ -1,7 +1,7 @@
-import "./style.css";
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "components/buttons/Button";
+import "./style.css";
 
 const Error: FC = (): JSX.Element => {
   

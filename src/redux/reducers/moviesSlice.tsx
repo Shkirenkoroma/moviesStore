@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { loginData } from "common/utils";
 import moment from "moment";
 import "moment/locale/en-gb";
 

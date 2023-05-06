@@ -1,8 +1,8 @@
-import './style.css'
 import { FC } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addComment } from 'redux/reducers/moviesSlice'
+import './style.css'
 
 interface IPropsArea {
   loginName: string
